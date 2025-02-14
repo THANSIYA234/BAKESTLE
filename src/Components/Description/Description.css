@@ -1,0 +1,36 @@
+.description_box{
+    margin: 120px 170px;
+}
+.description_box_navigator{
+    display: flex;
+}
+.description_nav_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 170px;
+    height: 70px;
+    border: 1px solid #d0d0d0;
+}
+.description_nav_fade{
+    background-color: #fbfbfb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 170px;
+    height: 70px;
+    border: 1px solid #d0d0d0;
+}
+
+.descripton{
+    display: flex   ;
+    flex-direction: column;
+    gap: 25px;
+    padding: 48px;
+    padding-bottom: 70px;
+    border: 1px solid #d0d0d0;
+}

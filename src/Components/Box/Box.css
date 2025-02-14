@@ -1,0 +1,40 @@
+.box{
+    
+    background-color:rgb(255, 245, 203) ;
+   
+    margin: auto;
+   
+    text-align:center;
+    
+}
+.box grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: rem;
+    margin-bottom: 2rem;
+   
+}
+
+.box1{
+    padding: 7rem;
+    display: inline-block;
+    gap: 7rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.box1 h1{
+   font:20px unna,serif;
+}
+.box1 h2{
+    font: 15px unna,serif;
+}
+.box1 img{
+    width: 30px;
+    height: 30px;
+  
+} 
+.box1 svg{
+    height: 30px;
+}
+ 

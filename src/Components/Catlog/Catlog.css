@@ -1,0 +1,32 @@
+.catlog{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+    height: 90vh;
+}
+
+.catlog h1{
+    color: #d27f29;
+    font-size: 40px;
+    font-family: 'unna',serif;
+    font-weight: 600;
+    position: relative;
+    top: 20px;
+.catlog hr{
+        width: 200px;
+        height: 6px;
+        border-radius: 10px;
+        background: #131211;
+    }
+    
+    
+}
+.catlog-items{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    margin-top:50px;
+
+}
