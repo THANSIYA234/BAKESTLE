@@ -40,7 +40,7 @@ const Resetpassword = () => {
               />
               <button onClick={handleResetPassword} className='link'>Send Reset Link</button>
 
-              <button onClick={()=>navigate({to:"/login"})} className='backlogin'>Back To Login</button>
+              <button onClick={()=>navigate({to: "/login?mode=login"})} className='backlogin'>Back To Login</button>
       </div>      
     </div>
   )

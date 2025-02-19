@@ -1,6 +1,6 @@
-import { createContext } from "react";
+import { createContext, useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDB5ZPJH90wHpu_PUou58QMKs4KFGU15bM",
@@ -15,11 +15,29 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 
-export const FirebaseContext = createContext({ auth });
+export const FirebaseContext = createContext({ auth, user: null });
 
 export const FirebaseProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser({
+          uid: currentUser.uid,
+          email: currentUser.email,
+          name: currentUser.displayName || "User",  
+        });
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
-    <FirebaseContext.Provider value={{ auth }}>
+    <FirebaseContext.Provider value={{ auth, user }}>
       {children}
     </FirebaseContext.Provider>
   );
